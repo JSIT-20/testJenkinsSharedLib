@@ -1,3 +1,5 @@
 def call(Map config = [:]) {
-    sh "echo This is a test"
+    props = readProperties(file:'test.properties')
+    env.var1 = props.var1
+    sh "echo $var1"
 }
